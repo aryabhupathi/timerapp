@@ -2,6 +2,16 @@
 
 ## Overview
 This update enhances the Timer App by allowing multiple timers to run simultaneously, improving snack bar behavior, refactoring code for maintainability, and ensuring data persistence. Additionally, comprehensive tests have been added for validation logic and reusable components.
+## Setup
+Clone the repository:
+git clone https://github.com/aryabhupathi/timerapp.git
+
+Install dependencies:
+npm install
+
+Start the development server:
+npm run dev
+
 
 ## Completed Features
 
