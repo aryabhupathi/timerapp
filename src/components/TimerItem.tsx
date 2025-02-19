@@ -49,6 +49,7 @@ useEffect(() => {
           hasEndedRef.current = false;
         },
       },
+        position: window.innerWidth < 768 ? "bottom-center" : "top-right",
     });
   }
 }, [timer.remainingTime, timer.id]);

@@ -63,7 +63,9 @@ export const AddEditModal: React.FC<AddEditProps> = ({
     if (
       !validateTimerForm({ title, description, hours, minutes, seconds })
     ) {
-      toast.error("Failed to save timer. Please fix the errors.");
+      toast.error("Failed to save timer. Please fix the errors.", {
+        position: window.innerWidth < 768 ? "bottom-center" : "top-right",
+      });
       return;
     }
 
@@ -77,6 +79,7 @@ export const AddEditModal: React.FC<AddEditProps> = ({
       });
       toast.success("Timer updated successfully!", {
         duration: 3000,
+        position: window.innerWidth < 800 ? "bottom-center" : "top-right"
       });
     } else {
       addTimer({
@@ -88,6 +91,7 @@ export const AddEditModal: React.FC<AddEditProps> = ({
       });
       toast.success("Timer added successfully!", {
         duration: 3000,
+        position: window.innerWidth < 800 ? "bottom-center" : "top-right"
       });
     }
     onClose();
@@ -131,7 +135,7 @@ export const AddEditModal: React.FC<AddEditProps> = ({
               placeholder="Enter timer title"
             />
           </div>
-          {/* description fielg */}
+          {/* description field */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Description
@@ -157,7 +161,7 @@ export const AddEditModal: React.FC<AddEditProps> = ({
                   </label>
                   <input
                     type="number"
-                    min="0"
+                    // min="0"
                     max={index === 0 ? 23 : 59}
                     value={[hours, minutes, seconds][index]}
                     onChange={(e) => {
