@@ -7,7 +7,7 @@ export const TimerList: React.FC = () => {
   const { timers } = useTimerStore();
 
   return (
-    <div className="space-y-4 min-h-[400px]">
+    <div className="w-full max-w-6xl mx-auto">
       {timers.length === 0 ? (
         <div className="h-[400px] flex flex-col items-center justify-center">
           <EmptyState />
@@ -19,7 +19,7 @@ export const TimerList: React.FC = () => {
           </p>
         </div>
       ) : (
-        <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 grid-cols-1 lg:grid-cols-2">
           {timers.map((timer) => (
             <TimerItem key={timer.id} timer={timer} />
           ))}
